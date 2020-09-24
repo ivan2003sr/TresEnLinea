@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ta Te Ti</string>
+    <string name="un_jugador">1 Jugador</string>
+    <string name="dos_jugadores">2 Jugadores</string>
+    <string name="facil">Fácil</string>
+    <string name="normal">Normal</string>
+    <string name="imposible">Imposible</string>
+    <string name="casilla">Casilla</string>
+    <string name="circulos_ganan">¡¡Ganan los Círculos!!</string>
+    <string name="cruces_ganan">¡¡Ganan las cruces!!</string>
+    <string name="empate">¡¡Empate!!</string>
+
+</resources>

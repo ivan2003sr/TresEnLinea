@@ -1,3 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tres En Linea</string>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="un_jugador">1 Player</string>
+    <string name="dos_jugadores">2 Players</string>
+    <string name="facil">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="imposible">Unsane</string>
+    <string name="casilla">Tile</string>
+    <string name="circulos_ganan">Circles win!!</string>
+    <string name="cruces_ganan">Crosses win!!</string>
+    <string name="empate">Tie!!</string>
+
 </resources>
