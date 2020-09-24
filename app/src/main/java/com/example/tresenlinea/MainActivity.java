@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -73,6 +75,22 @@ public class MainActivity extends Activity {
 
 
 
+    }
+
+    //método toque para que detecte qué casilla se ha pulsado
+
+    public void toque (View miVista){
+        int casilla=0;
+        for (int i=0; i<9;i++){
+            if(casillas[i]==miVista.getId()){
+                casilla=i;
+                break;
+            }
+        }
+
+        Toast toast=Toast.makeText(this,"Has pulsado la casilla "+casilla, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER,0,0);
+        toast.show();
     }
 
 
