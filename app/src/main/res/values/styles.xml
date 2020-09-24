@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Dialog.NoActionBar">
+    <style name="AppTheme" parent="android:Theme.Holo.NoActionBar.Fullscreen">
 
     </style>
     
