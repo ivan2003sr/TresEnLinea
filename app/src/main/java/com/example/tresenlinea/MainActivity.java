@@ -80,6 +80,10 @@ public class MainActivity extends Activity {
     //método toque para que detecte qué casilla se ha pulsado
 
     public void toque (View miVista){
+        if(partida==null){
+            return;     //Si entra en el if sale del método
+        }
+
         int casilla=0;
         for (int i=0; i<9;i++){
             if(casillas[i]==miVista.getId()){
@@ -88,9 +92,27 @@ public class MainActivity extends Activity {
             }
         }
 
-        Toast toast=Toast.makeText(this,"Has pulsado la casilla "+casilla, Toast.LENGTH_LONG);
+        /*Toast toast=Toast.makeText(this,"Has pulsado la casilla "+casilla, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER,0,0);
-        toast.show();
+        toast.show();*/
+
+
+        marca(casilla);  //Llamo al método marca
+
+    }
+
+    //Marca la casilla con cruz o círculo
+
+    private void marca(int casilla){
+        ImageView imagen;
+        imagen=(ImageView) findViewById(casillas[casilla]);
+
+        if(partida.jugador==1){
+            imagen.setImageResource(R.drawable.circulo);
+        }else{
+            imagen.setImageResource(R.drawable.aspa);
+        }
+
     }
 
 
