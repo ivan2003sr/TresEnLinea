@@ -71,10 +71,6 @@ public class MainActivity extends Activity {
 
         ((RadioGroup) findViewById(R.id.configD)).setAlpha(0);
 
-
-
-
-
     }
 
     //método toque para que detecte qué casilla se ha pulsado
@@ -95,10 +91,52 @@ public class MainActivity extends Activity {
         /*Toast toast=Toast.makeText(this,"Has pulsado la casilla "+casilla, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();*/
-
+    if(partida.compruebaCasilla(casilla)==false){
+        return;
+    }
 
         marca(casilla);  //Llamo al método marca
 
+        int resultado = partida.turno(); // Cambia da jugador a jugador 2
+
+        if(resultado>0){
+            termina(resultado);
+            return;
+        }
+        if(jugadores==2) return;    //Si hay 2 jugadores, no sigue
+            casilla = partida.ia(); //Selecciona una casilla llamando al método, según dificultad
+
+            while (partida.compruebaCasilla(casilla) != true) {
+
+                casilla = partida.ia();
+            }
+
+
+            marca(casilla); // Marca con una cruz
+
+            resultado = partida.turno(); // Vuelve a jugador 1
+            if (resultado > 0) {
+                termina(resultado);
+            }
+
+
+    }
+
+    private void termina(int resultado) {
+
+        String mensaje;
+
+        if(resultado==1) mensaje="Ganan los círculos";
+        else if (resultado==2) mensaje = "Ganan las cruces";
+        else mensaje="empate";
+
+        Toast toast=Toast.makeText(this,mensaje,Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER,0,0);
+        toast.show();
+        partida=null;
+        ((Button) findViewById(R.id.unjug)).setEnabled(true);
+        ((Button) findViewById(R.id.dosjug)).setEnabled(true);
+        ((RadioGroup) findViewById(R.id.configD)).setAlpha(1);
     }
 
     //Marca la casilla con cruz o círculo
